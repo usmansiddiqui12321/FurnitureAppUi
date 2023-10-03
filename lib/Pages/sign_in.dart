@@ -67,11 +67,13 @@ class _SignInState extends State<SignIn> {
                   const SizedBox(height: 40),
                   CustomButton(
                     title: "SIGN IN",
-                      height: 50,
-        width: 285,
+                    height: 50,
+                    width: 285,
                     ontap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const MasterPage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MasterPage()));
                     },
                   ),
                   const SizedBox(height: 35),
