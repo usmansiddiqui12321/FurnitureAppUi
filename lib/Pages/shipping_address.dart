@@ -40,7 +40,6 @@ class _ShippingAddressState extends State<ShippingAddress> {
             ),
             onPressed: () {}),
       ),
-  
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
@@ -60,7 +59,6 @@ class _ShippingAddressState extends State<ShippingAddress> {
               const SizedBox(height: 15),
               NameAndAddress(size: size),
               const SizedBox(height: 25),
-             
             ],
           ),
         ),
@@ -81,8 +79,7 @@ class CheckboxHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Checkbox(
-            activeColor: Colors.black, value: isChecked, onChanged: (val) {}),
+        const CustomCheckbox(),
         const SizedBox(width: 15),
         Text("Use as the shipping address",
             style: GoogleFonts.nunitoSans(
@@ -153,5 +150,46 @@ class NameAndAddress extends StatelessWidget {
             ),
           ],
         ));
+  }
+}
+
+class CustomCheckbox extends StatefulWidget {
+  const CustomCheckbox({Key? key}) : super(key: key);
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _CustomCheckboxState createState() => _CustomCheckboxState();
+}
+
+class _CustomCheckboxState extends State<CustomCheckbox> {
+  bool isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isChecked = !isChecked;
+        });
+      },
+      child: Container(
+        width: 24.0,
+        height: 24.0,
+        decoration: BoxDecoration(
+          color: isChecked ? const Color(0xFF303030) : null,
+          border: Border.all(
+            color: isChecked ? const Color(0xFF303030) : Colors.grey,
+            width: 2.0,
+          ),
+          borderRadius: BorderRadius.circular(4.0),
+        ),
+        child: isChecked
+            ? const Icon(
+                Icons.check,
+                size: 15,
+                color: Colors.white,
+              )
+            : null,
+      ),
+    );
   }
 }
