@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app_ui/Pages/master_page.dart';
+import 'package:furniture_app_ui/Pages/splash_screen.dart';
 
 import 'package:furniture_app_ui/theme_data.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      home: const MasterPage(),
+      home: const SplashScreen(),
     );
   }
 }

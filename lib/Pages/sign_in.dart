@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app_ui/Pages/homepage.dart';
+import 'package:furniture_app_ui/Pages/master_page.dart';
 import 'package:furniture_app_ui/Pages/sign_up.dart';
 import 'package:furniture_app_ui/widgets/custom_button.dart';
 import 'package:furniture_app_ui/widgets/custom_text_field.dart';
@@ -70,7 +71,7 @@ class _SignInState extends State<SignIn> {
         width: 285,
                     ontap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const Homepage()));
+                          MaterialPageRoute(builder: (context) => const MasterPage()));
                     },
                   ),
                   const SizedBox(height: 35),
